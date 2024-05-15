@@ -9,7 +9,7 @@ export function ProjectsSideBar() {
           + Add Project
         </button>
       </div>
-      <ul>...</ul>
+      <ul></ul>
     </aside>
   );
 }
