@@ -1,5 +1,6 @@
 import { useState } from "react";
-import NoProjectSelected from "./components/NoProjectSelected.jsx";
+import { NewProject } from "./components/NewProject.jsx";
+import { NoProjectSelected } from "./components/NoProjectSelected.jsx";
 import { ProjectsSideBar } from "./components/ProjectsSideBar.jsx";
 
 function App() {
@@ -17,11 +18,18 @@ function App() {
     });
   }
 
+  let content;
+  if (projectState.selectedProjectId === null) {
+    content = <NewProject />;
+  } else if (projectState.selectedProjectId === undefined) {
+    content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
+  }
+
   return (
     <main className="h-screen my-8 flex gap-8">
       {" "}
       <ProjectsSideBar onStartAddProject={handleStartAddProject} />
-      <NoProjectSelected onStartAddProject={handleStartAddProject} />
+      {content}
     </main>
   );
 }
