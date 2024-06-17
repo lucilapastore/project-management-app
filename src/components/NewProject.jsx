@@ -1,6 +1,6 @@
 import Input from "./Input.jsx";
 
-function NewProject() {
+export default function NewProject() {
   return (
     <>
       <div className="w-[35rem] mt-16">
@@ -26,4 +26,3 @@ function NewProject() {
     </>
   );
 }
-export default NewProject;
