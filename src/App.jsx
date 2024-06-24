@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NewProject } from "./components/NewProject.jsx";
+import NewProject from "./components/NewProject.jsx";
 import { NoProjectSelected } from "./components/NoProjectSelected.jsx";
 import { ProjectsSideBar } from "./components/ProjectsSideBar.jsx";
 
@@ -14,6 +14,20 @@ function App() {
       return {
         ...prevState,
         selectedProjectId: null,
+      };
+    });
+  }
+
+  function handleAddProject(projectData) {
+    setProjectsState((prevSate) => {
+      const newProject = {
+        ...projectData,
+        id: Math.random(),
+      };
+
+      return {
+        ...prevSate,
+        projects: [...prevSate.projects, newProject],
       };
     });
   }
