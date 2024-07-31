@@ -13,6 +13,8 @@ export default function NewProject({ onAdd }) {
     const enteredDescription = description.current.value;
     const enteredDueDate = dueDate.current.value;
 
+    // validation ...
+
     onAdd({
       title: enteredTitle,
       description: enteredDescription,
@@ -40,9 +42,9 @@ export default function NewProject({ onAdd }) {
         </menu>
 
         <div>
-          <Input type="text" ref={title} label="Title" />
+          <Input ref={title} type="text" label="Title" />
           <Input ref={description} label="Description" isTextArea />
-          <Input type="date" ref={dueDate} label="Due Date" />
+          <Input ref={dueDate} type="date" label="Due Date" />
         </div>
       </div>
     </>
